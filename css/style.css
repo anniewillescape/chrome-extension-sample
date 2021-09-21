@@ -50,6 +50,10 @@ td.today {
     background-color: #D65E72;
     color: #fff;
 }
+/*休日*/
+td.holiday {
+    color: red;
+}
 
 /*ボタン*/
 #next-prev-button {

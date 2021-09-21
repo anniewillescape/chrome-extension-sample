@@ -27,6 +27,16 @@ function showProcess(date) {
   document.querySelector('#calendar').innerHTML = calendar;
 }
 
+function isToday(year, month, day) {
+  return (year == today.getFullYear()
+    && month == (today.getMonth())
+    && day == today.getDate());
+}
+
+function isHoliday(year, month, day) {
+  return JapaneseHolidays.isHoliday(new Date(year, month, day));
+}
+
 function createProcess(year, month) {
   // 曜日
   var calendar = "<table><tr class='dayOfWeek'>";
@@ -51,10 +61,10 @@ function createProcess(year, month) {
         calendar += "<td class='disabled'>" + (count - endDate) + "</td>";
       } else {
         count++;
-        if (year == today.getFullYear()
-          && month == (today.getMonth())
-          && count == today.getDate()) {
+        if (isToday(year, month, count)) {
           calendar += "<td class='today'>" + count + "</td>";
+        } else if (isHoliday(year, month, count)) {
+          calendar += "<td class='holiday'>" + count + "</td>";
         } else {
           calendar += "<td>" + count + "</td>";
         }
