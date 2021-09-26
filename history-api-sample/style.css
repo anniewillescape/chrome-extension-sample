@@ -1,0 +1,74 @@
+@charset "utf-8";
+
+body,
+html {
+  background: white;
+  font-family: "Ricty", "Hiragino Sans", "メイリオ", Meiryo;
+}
+.wrapper {
+  width: 400px;
+}
+
+.search-area {
+  padding: 1em;
+  background: #d9e5ff;
+}
+
+.result-area {
+  width: 100%;
+  max-height: 450px;
+  overflow: auto;
+}
+
+input {
+  width: 100%;
+  border: 1px solid darkslateblue;
+  border-radius: 5px;
+  line-height: 1.5;
+}
+span {
+  font-size: medium;
+}
+
+a {
+  text-decoration: none;
+  color: gray;
+  font-size: medium;
+  font-weight: bold;
+}
+
+/*--------------------
+  tableデザイン
+-------------------*/
+table {
+  border-collapse: collapse; /* セルの線を重ねる */
+  width: 100%;
+  table-layout: fixed;
+}
+
+table tr:hover {
+  background-color: gainsboro;
+}
+
+table tr:focus {
+  background-color: gainsboro;
+}
+
+table td {
+  border-width: 1px 0px; /* 上下だけ引く */
+  border-style: dotted;
+  padding: 10px; /* 余白指定 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+table td#icon {
+  width: 5%;
+}
+
+table td a span {
+  font-size: small;
+  font-weight: normal;
+  color: gray;
+}
